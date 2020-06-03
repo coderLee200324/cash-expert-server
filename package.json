@@ -1,0 +1,32 @@
+{
+  "name": "cash-expert-server",
+  "version": "1.0.0",
+  "description": "cash-expert-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderLee200324/cash-expert-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coderLee200324/cash-expert-server/issues"
+  },
+  "homepage": "https://github.com/coderLee200324/cash-expert-server#readme",
+  "dependencies": {
+    "koa": "^2.12.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^9.0.1",
+    "mime": "^2.4.6",
+    "mz": "^2.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}
