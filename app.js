@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 const Koa = require("koa");
 const bodyParser = require("koa-bodyparser");
-const config = require("./config/defaultConfig");
+const serverConfig = require("./config/serverConfig");
 // 处理静态文件的中间件
 const staticFiles = require("./middelware/static-files");
 const controller = require("./middelware/controller");
-const apiHeader = require("./middelware/api-header");
+// const apiHeader = require("./middelware/api-header");
+// const CrrorRoutesCatch = require("./middelware/error-routes-catch");
 
-const host = config.server.HOST;
-const port = config.server.PORT;
+const { port } = serverConfig;
 const app = new Koa();
 
 // 返回响应时间
@@ -19,18 +19,20 @@ app.use(async (ctx, next) => {
   ctx.response.set("X-Response-Time", `${execTime}ms`);
 });
 
+// app.use(CrrorRoutesCatch());
+
 // 注册处理静态文件的中间件
 app.use(staticFiles("/static/", `${__dirname}/static`));
 
 // header中间件
 // 还需要看看api有没有
-app.use(apiHeader());
+// app.use(apiHeader());
 
 app.use(bodyParser());
 
 // 路由中间件
 app.use(controller());
 
-app.listen(port, host, () => {
-  console.log(`app started at http://${host}:${port}`);
+app.listen(port, () => {
+  console.log(`app started at http://localhost:${port}`);
 });

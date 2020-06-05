@@ -22,6 +22,7 @@
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^9.0.1",
     "mime": "^2.4.6",
+    "mysql": "^2.18.1",
     "mz": "^2.7.0"
   },
   "devDependencies": {
