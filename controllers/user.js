@@ -1,8 +1,12 @@
+// const UserDAL = require("../dal/user");
+
 module.exports = {
   "POST /login": async ctx => {
     // 设置Content-Type:
     ctx.response.type = "application/json";
     // 设置Response Body:
+    // const result = await UserDAL.Login();
+    // console.log(result);
     ctx.response.body = {
       code: 0,
       msg: "成功",
